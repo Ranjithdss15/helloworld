@@ -8,15 +8,15 @@ node ('master') {
         timestamps {
             print 'Prepping workspace for build...'
         }
-​        def gitBranch
-        def version
+// ​        def gitBranch
+//         def version
         deleteDir()
 ​
-        gitBranch = env.BRANCH_NAME ?: 'master'
+        def gitBranch = env.BRANCH_NAME ?: 'master'
 ​
         git credentialsId: GIT_CREDENTIALS_ID, url: GIT_REPO, branch: gitBranch
 ​
-        version = currentBuild.number
+        def version = currentBuild.number
 ​
         timestamps {
             print "Starting build of version ${version} using branch ${gitBranch}"
