@@ -1,10 +1,15 @@
+final STACKNAME = 'helloworld-node'
+final ACCOUNT = '730186024834'
+final GIT_REPO = 'https://github.com/Ranjithdss15/helloworld.git'
+
+final ECR_REGISTRY = "${ACCOUNT}.dkr.ecr.us-east-1.amazonaws.com/${STACKNAME}"
+// final DEPLOY_ROLE_ARN = "arn:aws:iam::${ACCOUNT}:role/${STACKNAME}-deploy"
+final GIT_CREDENTIALS_ID = "1737ad6b-0599-4841-acc1-c42083ca226e"
+​
 
 ​
-
-​
-node('master') {
-​
-    stage('Preparation') {
+node("master") {
+    stage("Preparation") {
         timestamps {
             print 'Prepping workspace for build...'
         }
@@ -46,13 +51,7 @@ node('master') {
             timestamps {
                 print 'Building and publishing our container...'
             }
-            final STACKNAME = 'helloworld-node'
-            final ACCOUNT = '730186024834'
-            final GIT_REPO = 'https://github.com/Ranjithdss15/helloworld.git'
 
-            final ECR_REGISTRY = "${ACCOUNT}.dkr.ecr.us-east-1.amazonaws.com/${STACKNAME}"
-            // final DEPLOY_ROLE_ARN = "arn:aws:iam::${ACCOUNT}:role/${STACKNAME}-deploy"
-            final GIT_CREDENTIALS_ID = "1737ad6b-0599-4841-acc1-c42083ca226e"
 ​
             sh "docker build -t ${STACKNAME} ."
             sh "docker tag ${STACKNAME}:latest ${ECR_REGISTRY}:${version}"
