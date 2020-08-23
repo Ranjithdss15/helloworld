@@ -2,7 +2,7 @@
 ​
 
 ​
-node ('master') {
+node('master') {
 ​
     stage('Preparation') {
         timestamps {
