@@ -4,7 +4,7 @@ final GIT_REPO = 'https://github.com/Ranjithdss15/helloworld.git'
 
 final ECR_REGISTRY = "${ACCOUNT}.dkr.ecr.us-east-1.amazonaws.com/${STACKNAME}"
 final DEPLOY_ROLE_ARN = "arn:aws:iam::${ACCOUNT}:role/${STACKNAME}-deploy"
-final GIT_CREDENTIALS_ID = "bitbucket_access"
+// final GIT_CREDENTIALS_ID = "bitbucket_access"
 ​
 def gitBranch
 def version
