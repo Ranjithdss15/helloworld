@@ -5,7 +5,7 @@
 // final ECR_REGISTRY = "${ACCOUNT}.dkr.ecr.us-east-1.amazonaws.com/${STACKNAME}"
 // // final DEPLOY_ROLE_ARN = "arn:aws:iam::${ACCOUNT}:role/${STACKNAME}-deploy"
 // final GIT_CREDENTIALS_ID = "1737ad6b-0599-4841-acc1-c42083ca226e"
-​node("master"){
+​node{
     stage("test 1"){
         sh "docker images"
     }
