@@ -1,10 +1,6 @@
-
-​
-
-​
-node ('master') {
-​
-    stage("Test"){
-        println "Testing Jenkinsfile"
+node("master"){
+    
+    stage("test 1"){
+        sh "docker images"
     }
 }
