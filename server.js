@@ -21,6 +21,9 @@ app.get('/style.css', function (req, res) {
   app.get('/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'pages', 'main.js'));
   });
+  app.get('/png3.png', function (req, res) {
+    res.sendFile(path.join(__dirname, 'Images', 'png3.png'));
+    });
 
  var counter = 0; 
 app.get('/counter', function (req, res) {
