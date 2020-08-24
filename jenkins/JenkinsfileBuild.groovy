@@ -4,7 +4,7 @@
 //     echo 'Hello World'
 //   }
 // }
-​
+
 node {
     stage('Preparation') {
         timestamps {
@@ -57,7 +57,11 @@ final ECR_REGISTRY = "${ACCOUNT}.dkr.ecr.us-east-1.amazonaws.com/${STACKNAME}"
 final GIT_CREDENTIALS_ID = "1737ad6b-0599-4841-acc1-c42083ca226e"
             sh "docker build -t ${STACKNAME} ."
             sh "docker tag ${STACKNAME}:latest ${ECR_REGISTRY}:${version}"
-            sh "docker push ${ECR_REGISTRY}:${version}"
+            sh """
+                aws ecr get-login --region us-east-1 --no-include-email | xargs xargs
+                docker push ${ECR_REGISTRY}:${version}
+            """
+            // sh "docker push ${ECR_REGISTRY}:${version}"
             sh "docker rmi ${STACKNAME} ${ECR_REGISTRY}:${version}"
             
            timestamps {
