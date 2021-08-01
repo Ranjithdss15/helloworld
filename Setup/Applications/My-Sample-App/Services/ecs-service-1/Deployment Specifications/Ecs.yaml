@@ -8,8 +8,8 @@ containerDefinition:
     logDriver: awslogs
     options:
     - name: awslogs-group
-      value: awslogs-group
-    - name: awslogs-group
+      value: /ecs/helloworld
+    - name: awslogs-region
       value: us-east-1
     - name: awslogs-stream-prefix
       value: ecs
