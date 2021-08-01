@@ -9,3 +9,17 @@ pipelineStages:
     type: DO_NOT_SKIP
   stageName: STAGE 1
   workflowName: Build
+- type: APPROVAL
+  name: Approval 1
+  parallel: false
+  properties:
+    userGroups:
+    - Account Administrator
+    variables: null
+    stageName: STAGE 2
+    timeoutMillis: 86400000
+    approvalStateType: USER_GROUP
+    sweepingOutputName: ''
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 2
