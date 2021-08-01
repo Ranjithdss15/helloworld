@@ -15,6 +15,16 @@ phases:
   phaseSteps:
   - type: PREPARE_STEPS
     name: Prepare Steps
+    steps:
+    - type: JENKINS
+      name: Jenkins
+      properties:
+        jenkinsConfigName: Jenkins-1
+        jobName: My-Sample-App-Build
+        jobParameters: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        timeoutMillis: 600000
     stepsInParallel: false
   - type: COLLECT_ARTIFACT
     name: Collect Artifact
