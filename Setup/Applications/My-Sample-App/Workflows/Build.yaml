@@ -31,6 +31,16 @@ phases:
     steps:
     - type: ARTIFACT_COLLECTION
       name: Artifact Collection
+      properties:
+        artifactStreamName: helloworld-node
+        buildNo: latest
+        entityType: SERVICE
+        regex: false
+        serviceName: ecs-service-1
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        timeoutMillis: 300000
     stepsInParallel: false
   - type: WRAP_UP
     name: Wrap Up
