@@ -15,7 +15,7 @@ pipelineStages:
   properties:
     userGroups:
     - Account Administrator
-    variables: null
+    workflowVariables: null
     stageName: STAGE 2
     timeoutMillis: 86400000
     approvalStateType: USER_GROUP
@@ -23,3 +23,10 @@ pipelineStages:
   skipCondition:
     type: DO_NOT_SKIP
   stageName: STAGE 2
+- type: ENV_STATE
+  name: Deploy-Non-Prod
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 3
+  workflowName: Deploy-Non-Prod
