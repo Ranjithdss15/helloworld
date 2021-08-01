@@ -3,8 +3,3 @@ type: ENVIRONMENT
 configMapYamlByServiceTemplateName: {}
 description: To demo basic deployment
 environmentType: NON_PROD
-variableOverrides:
-- name: image
-  serviceName: ecs-service-1
-  value: latest
-  valueType: TEXT
