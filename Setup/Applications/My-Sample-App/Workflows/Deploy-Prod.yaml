@@ -62,6 +62,14 @@ phases:
     stepsInParallel: false
   - type: VERIFY_SERVICE
     name: Verify Service
+    steps:
+    - type: APPROVAL
+      name: Approval
+      properties:
+        approvalStateType: USER_GROUP
+        timeoutMillis: 86400000
+        userGroupNames:
+        - Account Administrator
     stepsInParallel: false
   - type: ECS_UPDATE_LISTENER_BG
     name: Swap Target Groups
