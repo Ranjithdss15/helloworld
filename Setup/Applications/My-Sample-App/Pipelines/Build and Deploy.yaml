@@ -27,6 +27,7 @@ pipelineStages:
   name: Deploy-Non-Prod
   parallel: false
   skipCondition:
-    type: DO_NOT_SKIP
+    expression: ${skip.non-prod} == "YES"
+    type: CONDITIONAL_SKIP
   stageName: STAGE 3
   workflowName: Deploy-Non-Prod
