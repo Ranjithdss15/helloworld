@@ -28,9 +28,25 @@ phases:
     name: Set up Container
     steps:
     - type: ECS_BG_SERVICE_SETUP
-      name: Setup Load Balancer
+      name: service-blue-green
       properties:
+        awsAutoScalarConfigs:
+        - scalableTargetJson: ''
+          scalingPolicyForTarget: ''
+        desiredInstanceCount: fixedInstances
+        ecsServiceName: ${app.name}__${service.name}__${env.name}
+        fixedInstances: '1'
+        loadBalancerName: My-Sample-App
+        prodListenerArn: arn:aws:elasticloadbalancing:us-east-1:730186024834:listener/app/My-Sample-App/28f2288bda05be43/e1a4ba66fb08f4bd
+        prodListenerRuleArn: arn:aws:elasticloadbalancing:us-east-1:730186024834:listener-rule/app/My-Sample-App/28f2288bda05be43/e1a4ba66fb08f4bd/6aeaa7c7803826f8
         resizeStrategy: RESIZE_NEW_FIRST
+        roleArn: arn:aws:iam::730186024834:role/ECS-task
+        serviceSteadyStateTimeout: 10
+        stageListenerArn: arn:aws:elasticloadbalancing:us-east-1:730186024834:listener/app/My-Sample-App/28f2288bda05be43/596dea1a918a8989
+        stageListenerRuleArn: arn:aws:elasticloadbalancing:us-east-1:730186024834:listener-rule/app/My-Sample-App/28f2288bda05be43/596dea1a918a8989/ac497304431da944
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         useLoadBalancer: true
     stepsInParallel: false
   - type: CONTAINER_DEPLOY
