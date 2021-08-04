@@ -31,7 +31,7 @@ phases:
       name: ECS Service Setup
       properties:
         awsAutoScalarConfigs: null
-        desiredInstanceCount: fixedInstances
+        desiredInstanceCount: runningInstances
         ecsServiceName: ${app.name}__${service.name}__${env.name}
         fixedInstances: '2'
         loadBalancerName: My-Sample-App
