@@ -74,6 +74,13 @@ phases:
     steps:
     - type: ECS_SERVICE_DEPLOY
       name: Upgrade Containers
+      properties:
+        downsizeInstanceUnitType: PERCENTAGE
+        instanceCount: 100
+        instanceUnitType: PERCENTAGE
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
     stepsInParallel: false
   - type: VERIFY_SERVICE
     name: Verify Service
