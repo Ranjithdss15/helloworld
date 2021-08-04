@@ -19,6 +19,11 @@ node {
         git credentialsId: GIT_CREDENTIALS_ID, url: GIT_REPO, branch: gitBranch
 ​
         def version = currentBuild.number
+// Making env variables available for Harness 
+      environment {
+        version = currentBuild.number
+        }
+
 ​
         timestamps {
             print "Starting build of version ${version} using branch ${gitBranch}"
