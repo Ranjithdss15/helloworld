@@ -17,13 +17,18 @@ phases:
     name: Prepare Steps
     steps:
     - type: JENKINS
-      name: Jenkins_2
+      name: Jenkins
       properties:
-        jenkinsConfigName: Jenkins-2
+        jenkinsConfigName: Jenkins-1
         jobName: My-Sample-App-Build
-        jobParameters: null
+        jobParameters:
+        - key: BRANCH_NAME
+          value: master
         sweepingOutputName: null
         sweepingOutputScope: null
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeoutMillis: 600000
     stepsInParallel: false
   - type: COLLECT_ARTIFACT
