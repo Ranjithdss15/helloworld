@@ -47,8 +47,8 @@ phases:
     - type: ECS_SERVICE_DEPLOY
       name: Upgrade Containers
       properties:
-        instanceCount: 3
-        instanceUnitType: COUNT
+        instanceCount: 30
+        instanceUnitType: PERCENTAGE
         templateUuid: null
         templateVariables: null
         templateVersion: null
