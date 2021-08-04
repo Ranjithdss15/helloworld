@@ -21,7 +21,7 @@ phases:
     - type: HTTP
       name: HTTP
       properties:
-        assertion: ${httpResponseCode}==200
+        assertion: ${httpResponseCode}==200&&json.select("test", ${httpResponseBody}) == "healthy"
         body: ''
         executeWithPreviousSteps: false
         method: GET
@@ -30,9 +30,11 @@ phases:
         sweepingOutputName: null
         sweepingOutputScope: null
         tags: null
-        templateVariables: ''
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeoutMillis: 10000
-        url: http://164f59311050.ngrok.io/counter
+        url: https://postman-echo.com/get?test=healthy
         useProxy: false
     stepsInParallel: false
   - type: WRAP_UP
