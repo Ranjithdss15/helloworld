@@ -20,6 +20,22 @@ phases:
     steps:
     - type: ARTIFACT_COLLECTION
       name: Artifact Collection
+    - type: HTTP
+      name: HTTP
+      properties:
+        assertion: ${httpResponseCode}==200
+        body: ''
+        executeWithPreviousSteps: false
+        method: GET
+        publishAsVar: false
+        responseProcessingExpressions: ''
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        tags: null
+        templateVariables: ''
+        timeoutMillis: 10000
+        url: http://164f59311050.ngrok.io/counter
+        useProxy: false
     stepsInParallel: false
   - type: WRAP_UP
     name: Wrap Up
