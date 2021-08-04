@@ -29,6 +29,17 @@ phases:
     steps:
     - type: ECS_SERVICE_SETUP
       name: ECS Service Setup
+      properties:
+        awsAutoScalarConfigs: null
+        desiredInstanceCount: fixedInstances
+        ecsServiceName: ${app.name}__${service.name}__${env.name}
+        fixedInstances: '3'
+        resizeStrategy: RESIZE_NEW_FIRST
+        serviceSteadyStateTimeout: 10
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        title: ECS Service Setup
     stepsInParallel: false
   - type: CONTAINER_DEPLOY
     name: Deploy Containers
