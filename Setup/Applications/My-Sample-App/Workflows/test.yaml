@@ -21,7 +21,7 @@ phases:
     - type: HTTP
       name: HTTP
       properties:
-        assertion: ${httpResponseCode}==200&&jsonpath('args.test')== "healthy"
+        assertion: ${httpResponseCode}==200&&jsonpath('args.test', httpResponseBody)== "healthy"
         body: ''
         executeWithPreviousSteps: false
         method: GET
