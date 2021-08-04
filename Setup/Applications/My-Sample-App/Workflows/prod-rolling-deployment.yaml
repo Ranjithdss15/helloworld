@@ -52,6 +52,11 @@ phases:
         templateUuid: null
         templateVariables: null
         templateVersion: null
+    - type: ECS_SERVICE_DEPLOY
+      name: ECS Upgrade Containers_2
+      properties:
+        instanceCount: 100
+        instanceUnitType: PERCENTAGE
     stepsInParallel: false
   - type: VERIFY_SERVICE
     name: Verify Service
