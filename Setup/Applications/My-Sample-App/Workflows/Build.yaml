@@ -19,13 +19,15 @@ phases:
     - type: JENKINS
       name: Jenkins
       properties:
+        injectEnvVars: true
         jenkinsConfigName: Jenkins-1
         jobName: My-Sample-App-Build
         jobParameters:
         - key: BRANCH_NAME
           value: master
-        sweepingOutputName: null
-        sweepingOutputScope: null
+        publishAsVar: true
+        sweepingOutputName: version
+        sweepingOutputScope: PIPELINE
         templateUuid: null
         templateVariables: null
         templateVersion: null
