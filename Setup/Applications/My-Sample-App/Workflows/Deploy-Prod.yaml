@@ -35,7 +35,7 @@ phases:
           scalingPolicyForTarget: ''
         desiredInstanceCount: fixedInstances
         ecsServiceName: ${app.name}__${service.name}__${env.name}
-        fixedInstances: '1'
+        fixedInstances: '2'
         loadBalancerName: My-Sample-App
         prodListenerArn: arn:aws:elasticloadbalancing:us-east-1:730186024834:listener/app/My-Sample-App/5fb256373461b2f4/018f7f9dea538846
         prodListenerRuleArn: arn:aws:elasticloadbalancing:us-east-1:730186024834:listener-rule/app/My-Sample-App/5fb256373461b2f4/018f7f9dea538846/01e39a1133cf5173
