@@ -26,6 +26,15 @@ phases:
         sweepingOutputName: null
         sweepingOutputScope: null
         timeoutMillis: 600000
+    - type: JENKINS
+      name: Jenkins_2
+      properties:
+        jenkinsConfigName: Jenkins-2
+        jobName: My-Sample-App-Build
+        jobParameters: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        timeoutMillis: 600000
     stepsInParallel: false
   - type: COLLECT_ARTIFACT
     name: Collect Artifact
