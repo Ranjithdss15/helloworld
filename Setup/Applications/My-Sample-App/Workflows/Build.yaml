@@ -40,9 +40,9 @@ phases:
       name: Artifact Collection
       properties:
         artifactStreamName: helloworld-node
-        buildNo: latest
+        buildNo: ${version}
         entityType: SERVICE
-        regex: false
+        regex: true
         serviceName: ecs-service-1
         templateUuid: null
         templateVariables: null
