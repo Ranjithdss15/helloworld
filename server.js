@@ -25,6 +25,12 @@ app.get('/style.css', function (req, res) {
     res.sendFile(path.join(__dirname, 'Images', 'png3.png'));
     });
 
+  app.get('/gradient.css', function (req, res) {
+    res.sendFile(path.join(__dirname, 'pages', 'gradient.css'));
+    });
+  app.get('/gradient.js', function (req, res) {
+    res.sendFile(path.join(__dirname, 'pages', 'gradient.js'));
+    });
  var counter = 0; 
 app.get('/counter', function (req, res) {
     counter+=1;
