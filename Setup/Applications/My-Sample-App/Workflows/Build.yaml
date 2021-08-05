@@ -40,7 +40,7 @@ phases:
       name: Artifact Collection
       properties:
         artifactStreamName: helloworld-node
-        buildNo: latest
+        buildNo: \d+
         entityType: SERVICE
         regex: true
         serviceName: ecs-service-1
