@@ -122,6 +122,23 @@ postDeploymentSteps:
     timeoutMillis: 10000
     url: https://postman-echo.com/get?test=healthy
     useProxy: false
+preDeploymentSteps:
+- type: HTTP
+  name: Mock Sonar Test (API call)
+  properties:
+    assertion: ${httpResponseCode}==200&&json.select("test", ${httpResponseBody}) == "healthy"
+    body: ''
+    executeWithPreviousSteps: false
+    method: GET
+    publishAsVar: false
+    responseProcessingExpressions: ''
+    sweepingOutputName: null
+    sweepingOutputScope: null
+    tags: null
+    templateVariables: ''
+    timeoutMillis: 10000
+    url: https://postman-echo.com/get?test=healthy
+    useProxy: false
 rollbackPhases:
 - type: ECS
   computeProviderName: Amazon Web Services
