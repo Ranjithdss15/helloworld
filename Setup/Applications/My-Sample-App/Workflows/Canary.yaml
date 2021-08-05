@@ -34,18 +34,13 @@ phases:
         desiredInstanceCount: runningInstances
         ecsServiceName: ${app.name}__${service.name}__${env.name}
         fixedInstances: '2'
-        loadBalancerName: My-Sample-App
         resizeStrategy: RESIZE_NEW_FIRST
-        roleArn: arn:aws:iam::730186024834:role/ECS-task
         serviceSteadyStateTimeout: 10
-        targetContainerName: ''
-        targetGroupArn: arn:aws:elasticloadbalancing:us-east-1:730186024834:targetgroup/TG-prod-ecs/8f45adfd04229f0f
-        targetPort: ''
         templateUuid: null
         templateVariables: null
         templateVersion: null
         title: ECS Service Setup
-        useLoadBalancer: true
+        useLoadBalancer: false
     stepsInParallel: false
   - type: CONTAINER_DEPLOY
     name: Deploy Containers
