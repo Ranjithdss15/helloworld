@@ -37,13 +37,13 @@ phases:
         ecsServiceName: ${app.name}__${service.name}__${env.name}
         fixedInstances: '2'
         loadBalancerName: My-Sample-App
-        prodListenerArn: arn:aws:elasticloadbalancing:us-east-1:730186024834:listener/app/My-Sample-App/5fb256373461b2f4/018f7f9dea538846
-        prodListenerRuleArn: arn:aws:elasticloadbalancing:us-east-1:730186024834:listener-rule/app/My-Sample-App/5fb256373461b2f4/018f7f9dea538846/01e39a1133cf5173
+        prodListenerArn: arn:aws:elasticloadbalancing:us-east-1:730186024834:listener/app/My-Sample-App/87fcbaa2e51cefe5/3d33b7e559c1da6f
+        prodListenerRuleArn: arn:aws:elasticloadbalancing:us-east-1:730186024834:listener-rule/app/My-Sample-App/87fcbaa2e51cefe5/3d33b7e559c1da6f/c8f6deb151e15053
         resizeStrategy: RESIZE_NEW_FIRST
         roleArn: arn:aws:iam::730186024834:role/ECS-task
         serviceSteadyStateTimeout: 10
-        stageListenerArn: arn:aws:elasticloadbalancing:us-east-1:730186024834:listener/app/My-Sample-App/5fb256373461b2f4/e4ff637ae1cfb080
-        stageListenerRuleArn: arn:aws:elasticloadbalancing:us-east-1:730186024834:listener-rule/app/My-Sample-App/5fb256373461b2f4/e4ff637ae1cfb080/97cde450f4fe7b3f
+        stageListenerArn: arn:aws:elasticloadbalancing:us-east-1:730186024834:listener/app/My-Sample-App/87fcbaa2e51cefe5/93db4314b7fefc65
+        stageListenerRuleArn: arn:aws:elasticloadbalancing:us-east-1:730186024834:listener-rule/app/My-Sample-App/87fcbaa2e51cefe5/93db4314b7fefc65/0a8865fc7f2ec3fe
         templateUuid: null
         templateVariables: null
         templateVersion: null
