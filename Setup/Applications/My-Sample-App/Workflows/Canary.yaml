@@ -109,7 +109,7 @@ preDeploymentSteps:
 - type: HTTP
   name: Mock Sonar Test (API call)
   properties:
-    assertion: ${httpResponseCode}==200&&json.select("test", ${httpResponseBody}) == "healthy"
+    assertion: ${httpResponseCode}==200&&json.select("test", ${httpResponseBody})=="healthy"
     body: ''
     executeWithPreviousSteps: false
     method: GET
@@ -118,7 +118,9 @@ preDeploymentSteps:
     sweepingOutputName: null
     sweepingOutputScope: null
     tags: null
-    templateVariables: ''
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
     timeoutMillis: 10000
     url: https://postman-echo.com/get?test=healthy
     useProxy: false
