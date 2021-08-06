@@ -109,7 +109,7 @@ preDeploymentSteps:
 - type: HTTP
   name: Mock Sonar Test (API call)
   properties:
-    assertion: ${httpResponseCode}==200&&${jsonpath('args.test')}=='healthy'
+    assertion: ${httpResponseCode}==200
     body: ''
     executeWithPreviousSteps: false
     method: GET
