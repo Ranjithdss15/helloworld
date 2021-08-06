@@ -105,25 +105,6 @@ phases:
   provisionNodes: false
   serviceName: ecs-service-1
   statefulSet: false
-preDeploymentSteps:
-- type: HTTP
-  name: Mock Sonar Test (API call)
-  properties:
-    assertion: ${jsonpath('args.test')}=='healthy'
-    body: ''
-    executeWithPreviousSteps: false
-    method: GET
-    publishAsVar: false
-    responseProcessingExpressions: ''
-    sweepingOutputName: null
-    sweepingOutputScope: null
-    tags: null
-    templateUuid: null
-    templateVariables: null
-    templateVersion: null
-    timeoutMillis: 10000
-    url: https://postman-echo.com/get?test=healthy
-    useProxy: false
 rollbackPhases:
 - type: ECS
   computeProviderName: Amazon Web Services
