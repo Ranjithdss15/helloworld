@@ -107,7 +107,7 @@ phases:
   statefulSet: false
 preDeploymentSteps:
 - type: HTTP
-  name: HTTP
+  name: Mock_Sonar_Gate
   properties:
     assertion: ${httpResponseCode}==200&&${jsonpath('args.test')}=='healthy'
     body: ''
@@ -118,7 +118,9 @@ preDeploymentSteps:
     sweepingOutputName: null
     sweepingOutputScope: null
     tags: null
-    templateVariables: ''
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
     timeoutMillis: 10000
     url: https://postman-echo.com/get?test=healthy
     useProxy: false
