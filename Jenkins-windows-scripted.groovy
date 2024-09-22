@@ -1,4 +1,7 @@
 node {
+   stage("Prepare"){
+    bat "git scm"
+  }
   stage("Build"){
     bat "npm install"
   }
