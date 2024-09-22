@@ -1,12 +1,11 @@
 node {
    stage("Prepare"){
-    bat "git scm"
+    git url: "https://github.com/Ranjithdss15/helloworld.git"
   }
   stage("Build"){
     bat "npm install"
   }
   stage("Deploy"){
-    bat "set PORT=9090"
-    bat "npm start"
+    bat "start /B npm start"
   }
 }
